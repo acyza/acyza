@@ -1,0 +1,12 @@
+name: update
+on:
+  push:
+    branches: ["main"]
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: tigger
+        run: gh workflow run -R acyza/homePage tiggerUpdate.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.UPDATE_TIGGER }}
